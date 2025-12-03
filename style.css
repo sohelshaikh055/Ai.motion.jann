@@ -1,0 +1,16 @@
+body {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    font-family: Arial;
+}
+
+.box {
+    margin-top: 20px;
+}
+
+video {
+    width: 90%;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
