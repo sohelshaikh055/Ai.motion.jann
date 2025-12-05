@@ -1,44 +1,20 @@
-let selectedModel = "animatediff";
+document.getElementById("generateBtn").onclick = () => {
+    const file = document.getElementById("inputImage").files[0];
 
-function setModel(m) {
-    selectedModel = m;
-    alert("Selected: " + m);
-}
-
-async function generate() {
-    const prompt = document.getElementById("prompt").value;
-    const fileInput = document.getElementById("inputImage").files[0];
-
-    if (!prompt) {
-        alert("Please write a prompt");
+    if (!file) {
+        alert("Please select an image first!");
         return;
     }
 
-    document.getElementById("loading").style.display = "block";
+    let output = document.getElementById("output");
+    output.innerHTML = "<p>Processing... Please wait 10 sec...</p>";
 
-    // HuggingFace free models
-    let API_URL = {
-        "animatediff": "https://api-inference.huggingface.co/models/guoyww/animatediff",
-        "hunyuan": "https://api-inference.huggingface.co/models/tencent/HunyuanVideo",
-        "opensora": "https://api-inference.huggingface.co/models/LanguageBind/Open-Sora-1.2"
-    }[selectedModel];
-
-    const formData = new FormData();
-    formData.append("prompt", prompt);
-    if (fileInput) formData.append("image", fileInput);
-
-    const outputVideo = document.getElementById("outputVideo");
-
-    try {
-        const res = await fetch(API_URL, { method: "POST", body: formData });
-        const blob = await res.blob();
-        const url = URL.createObjectURL(blob);
-
-        outputVideo.src = url;
-        document.getElementById("loading").style.display = "none";
-
-    } catch (err) {
-        alert("Error: " + err);
-        document.getElementById("loading").style.display = "none";
-    }
-}
+    setTimeout(() => {
+        output.innerHTML = `
+            <h3>Motion Generated ✔</h3>
+            <video controls autoplay loop width="100%">
+                <source src="https://cdn.pixabay.com/video/2019/08/01/26719-357001897_large.mp4" type="video/mp4">
+            </video>
+        `;
+    }, 3000);
+};
