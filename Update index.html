@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jann AI Motion Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>💜 Jann's AI Motion Studio</h1>
+    <p>Create AI Anime • AI Motion • AI VFX (Free)</p>
+</div>
+
+<div class="container">
+
+    <h2>Select Mode</h2>
+
+    <div class="mode-buttons">
+        <button onclick="setModel('animatediff')">Anime Motion (AnimateDiff)</button>
+        <button onclick="setModel('hunyuan')">Realistic Motion (Hunyuan)</button>
+        <button onclick="setModel('opensora')">Open-Sora Style</button>
+    </div>
+
+    <textarea id="prompt" placeholder="Describe your scene (e.g., 'anime boy running in rain, purple sky, cinematic')"></textarea>
+
+    <h3>Upload Image (optional)</h3>
+    <input type="file" id="inputImage">
+
+    <button class="generate-btn" onclick="generate()">Generate Motion Video</button>
+
+    <div id="loading" class="loading">Generating your AI Motion… wait 10-20 seconds 💜</div>
+
+    <video id="outputVideo" controls></video>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
