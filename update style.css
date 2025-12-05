@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #9b3dff, #ac63ff);
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+}
+
+.header {
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 16px;
+    margin-top: 20px;
+}
+
+.mode-buttons button {
+    background: #d3a4ff;
+    color: black;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+textarea {
+    width: 90%;
+    height: 100px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+
+.generate-btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #ffffff;
+    color: purple;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.loading {
+    display: none;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+video {
+    width: 90%;
+    margin-top: 20px;
+    border-radius: 12px;
+}
